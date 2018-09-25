@@ -12,7 +12,7 @@ namespace Place_an_order
             Driver.Initialize();
         }
         [TestMethod]
-        public void User_Can_Login()
+        public void MakeAnOrder()
         {
             LoginFramework.GoTo();
             LoginFramework.LoginAs("bz.mehdi@gmail.com").WithPassword("as12341234").Login();
@@ -20,19 +20,19 @@ namespace Place_an_order
             Orders.NewOrder();
             Orders.RentType();
             Orders.Customer_Info();
+            Orders.Check_Availability();
+/*
             Orders.I_want_To_Rent();
             Orders.Rental_Period();
             Orders.Borrow_Items();
             Orders.Would_Like_To_Purchase();
             Orders.Credit_Card_Info();
-            Orders.Check_Availability();
+            
             Orders.SkipPaymentAndSubmit();
             Orders.Pay();
+            */
 
 
-
-            //#printable > div.tiles.margin-bototm-30.padding-left-tiles > a:nth-child(2)
-            //# printable > div > div > div > div.portlet-title > div.tools > div > a
             Assert.IsTrue(DashboardPage.IsAt, "Failed to login.");
         }
 
