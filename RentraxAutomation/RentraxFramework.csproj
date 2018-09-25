@@ -56,6 +56,7 @@
     <Compile Include="DashboardPage.cs" />
     <Compile Include="Driver.cs" />
     <Compile Include="LoginFramework.cs" />
+    <Compile Include="Orders.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
