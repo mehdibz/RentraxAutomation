@@ -5,9 +5,7 @@ VisualStudioVersion = 15.0.28010.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentraxFramework", "RentraxAutomation\RentraxFramework.csproj", "{FD510B28-A808-4D17-A750-4090806E2D2E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoginTests", "LoginTests\LoginTests.csproj", "{E46A918B-AB33-4207-8F06-C48E73ECE139}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Place_an_order", "Place_an_order\Place_an_order.csproj", "{20B894C9-CB40-42BC-A519-85D811E4BDD2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "LoginTests\Tests.csproj", "{E46A918B-AB33-4207-8F06-C48E73ECE139}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +21,6 @@ Global
 		{E46A918B-AB33-4207-8F06-C48E73ECE139}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E46A918B-AB33-4207-8F06-C48E73ECE139}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E46A918B-AB33-4207-8F06-C48E73ECE139}.Release|Any CPU.Build.0 = Release|Any CPU
-		{20B894C9-CB40-42BC-A519-85D811E4BDD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{20B894C9-CB40-42BC-A519-85D811E4BDD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{20B894C9-CB40-42BC-A519-85D811E4BDD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{20B894C9-CB40-42BC-A519-85D811E4BDD2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

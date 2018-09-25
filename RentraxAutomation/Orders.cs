@@ -1,4 +1,6 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +14,7 @@ namespace RentraxAutomation
         public static void GoToRent()
         {
             //click on Rent Order
-            var renOrder = Driver.Instance.FindElement(By.CssSelector("# printable > div.tiles.margin-bototm-30.padding-left-tiles > a:nth-child(2)"));
+            var renOrder = Driver.Instance.FindElement(By.CssSelector("#printable > div.tiles.margin-bototm-30.padding-left-tiles > a:nth-child(2)"));
             renOrder.Click();
         }
 

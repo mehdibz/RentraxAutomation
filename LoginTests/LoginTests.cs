@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RentraxAutomation;
 
-namespace LoginTests
+namespace Tests
 {
     [TestClass]
     public class LoginTests
