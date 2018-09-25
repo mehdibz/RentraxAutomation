@@ -14,5 +14,10 @@ namespace RentraxAutomation
             //  Instance.Manage().Timeouts().ImplicitWait(TimeSpan.FromSeconds(5));
             Instance.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(10);
         }
+
+        public static void Close()
+        {
+            Instance.Close();
+        }
     }
 }

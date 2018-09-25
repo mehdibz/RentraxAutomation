@@ -18,7 +18,13 @@ namespace LoginTests
             LoginFramework.GoTo();
             LoginFramework.LoginAs("bz.mehdi@gmail.com").WithPassword("as12341234").Login();
 
-            //Assert.IsTrue("");
+            Assert.IsTrue(DashboardPage.IsAt,"Failed to login.");
+        }
+
+        [TestCleanup]
+        public void CleanUp()
+        {
+            Driver.Close();
         }
     }
 }
