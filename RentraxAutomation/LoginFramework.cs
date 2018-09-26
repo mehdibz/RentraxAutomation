@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+
 namespace RentraxAutomation
 {
     public class LoginFramework
@@ -33,7 +35,9 @@ namespace RentraxAutomation
         }
 
         public void Login()
-        {   
+        {
+           // Driver.Wait(5);
+
             //click employee login
             var firstPage = Driver.Instance.FindElement(By.CssSelector("#printable > nav > div > div.collapse.navbar-collapse.navbar-right.navbar-main-collapse > ul > li:nth-child(1)"));
             firstPage.Click();
@@ -45,7 +49,11 @@ namespace RentraxAutomation
             //select password box
             var passwordInput = Driver.Instance.FindElement(By.CssSelector("body > div.col-md-4.center-block > div > div > form > div > div:nth-child(4) > div > input"));
             passwordInput.SendKeys(password);
-            
+
+            //click on Remember me
+            var Remember_me = Driver.Instance.FindElement(By.CssSelector("body > div.col-md-4.center-block > div > div > form > div > div:nth-child(5) > div:nth-child(1) > div > div > label > span.box"));
+            Remember_me.Click();
+
             //click on login
             var loginButton = Driver.Instance.FindElement(By.CssSelector("body > div.col-md-4.center-block > div > div > form > div > div.form-actions > input"));
             loginButton.Click();
@@ -59,8 +67,3 @@ namespace RentraxAutomation
     }
 }
 
-
-/*
-            var wait = new WebDriverWait(Driver.Instance, TimeSpan.FromSeconds(3));
-            wait.Until(d => d.SwitchTo().ActiveElement().GetAttribute("Id") == "headertext");
-*/

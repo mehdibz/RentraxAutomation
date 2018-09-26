@@ -17,30 +17,32 @@ namespace Tests
         {
             LoginFramework.GoTo();
             LoginFramework.LoginAs("bz.mehdi@gmail.com").WithPassword("as12341234").Login();
-                      Orders.GoToRent();
-                        Orders.NewOrder();
-                        Orders.RentType();
-                        Orders.Customer_Info();
-                        Orders.Check_Availability();
+            Orders.GoToRent();
+            Orders.NewOrder();
+            Orders.RentType();
+            Orders.Customer_Info();
+            Orders.I_want_To_Rent();
+
             /*
-                        Orders.I_want_To_Rent();
-                        Orders.Rental_Period();
-                        Orders.Borrow_Items();
-                        Orders.Would_Like_To_Purchase();
-                        Orders.Credit_Card_Info();
+            Orders.Check_Availability();
+            Orders.Rental_Period();
+            Orders.Borrow_Items();
+            Orders.Would_Like_To_Purchase();
+            Orders.Credit_Card_Info();
 
-                        Orders.SkipPaymentAndSubmit();
-                        Orders.Pay();
-                        */
+            Orders.SkipPaymentAndSubmit();
+            Orders.Pay();
+            */
 
 
-            Assert.IsTrue(DashboardPage.IsAt, "Failed to login.");
+            //Assert.IsTrue(DashboardPage.IsAt, "Failed to login.");
+            // Assert.IsTrue(DashboardPage.IsAt, "Failed to login.");
         }
 
         [TestCleanup]
         public void CleanUp()
         {
-            Driver.Close();
+           // Driver.Close();
         }
     }
 }

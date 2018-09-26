@@ -1,5 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.Interactions;
+using OpenQA.Selenium.Support.Extensions;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
@@ -14,8 +16,8 @@ namespace RentraxAutomation
         public static void GoToRent()
         {
             //click on Rent Order
-            var renOrder = Driver.Instance.FindElement(By.CssSelector("#printable > div.tiles.margin-bototm-30.padding-left-tiles > a:nth-child(2)"));
-            renOrder.Click();
+            var rentOrder = Driver.Instance.FindElement(By.CssSelector("#printable > div.tiles.margin-bototm-30.padding-left-tiles > a:nth-child(2) > div"));
+            rentOrder.Click();
         }
 
         public static void NewOrder()
@@ -28,7 +30,8 @@ namespace RentraxAutomation
         public static void Customer_Info()
         {
             //Fill the customer form
-            var email = Driver.Instance.FindElement(By.CssSelector("# email"));
+            Driver.Wait(2, By.XPath("//*[@id='email']"));
+            var email = Driver.Instance.FindElement(By.CssSelector("#email"));
             email.SendKeys("bz.mehdi@gmail.com");
             var firstName = Driver.Instance.FindElement(By.CssSelector("#first_name"));
             firstName.SendKeys("Mehdi");
@@ -38,16 +41,18 @@ namespace RentraxAutomation
             Phone.SendKeys("6047040000");
             var Address = Driver.Instance.FindElement(By.CssSelector("#address_street"));
             Address.SendKeys("Fullerton Ave");
+            Driver.Wait(4, By.XPath("//*[@id='printable']/div/div/div/div/section/div[1]/div[1]/div/div[2]/div[1]"));
+            Features.ScrollToView(By.XPath("//*[@id='printable']/div/div/div/div/section/div[3]/div[1]/div[2]/div/div[2]/div[3]/button[1]"));
         }
 
         public static void I_want_To_Rent()
         {
             //Select the SingleBike
-            var singleBike = Driver.Instance.FindElement(By.CssSelector("# printable > div > div > div > div > section > div:nth-child(4) > div.portlet.light.bordered.clearfix.ng-scope > div.portlet-body.form > div > div > div:nth-child(2) > button:nth-child(2)"));
+            var singleBike = Driver.Instance.FindElement(By.XPath("//*[@id='printable']/div/div/div/div/section/div[3]/div[1]/div[2]/div/div/div[2]/button[1]"));
             singleBike.Click();
-            var selectBike = Driver.Instance.FindElement(By.CssSelector("# printable > div > div > div > div > section > div:nth-child(4) > div.portlet.light.bordered.clearfix.ng-scope > div.portlet-body.form > div > div:nth-child(2) > div.ng-scope > div > div:nth-child(1) > div.col-xs-8.col-sm-4 > select"));
+            var selectBike = Driver.Instance.FindElement(By.CssSelector("//*[@id='printable']/div/div/div/div/section/div[3]/div[1]/div[2]/div/div[2]/div[1]/div/div[1]/div[2]/select"));
             selectBike.Click();
-            var selectedBike = Driver.Instance.FindElement(By.CssSelector("#printable > div > div > div > div > section > div:nth-child(4) > div.portlet.light.bordered.clearfix.ng-scope > div.portlet-body.form > div > div:nth-child(2) > div.ng-scope > div > div:nth-child(1) > div.col-xs-8.col-sm-4 > select > option:nth-child(3)"));
+            var selectedBike = Driver.Instance.FindElement(By.CssSelector("//*[@id='printable']/div/div/div/div/section/div[3]/div[1]/div[2]/div/div[2]/div[1]/div/div[1]/div[2]/select/option[3]"));
             selectedBike.Click();
         }
 
@@ -59,7 +64,8 @@ namespace RentraxAutomation
         public static void RentType()
         {
             //click on Rent_Now
-            var newOrder = Driver.Instance.FindElement(By.CssSelector("# printable > div > div > div > div > section > div:nth-child(2) > div.row-fluid > div > div.row.add_margin_bottom.ng-scope > div:nth-child(1) > label"));
+            Driver.Wait(4, By.XPath("//*[@id='printable']/div/div/div/div/section/div[1]/div[1]/div/div[2]/div[1]"));
+            var newOrder = Driver.Instance.FindElement(By.XPath("//*[@id='printable']/div/div/div/div/section/div[1]/div[1]/div/div[2]/div[1]"));
             newOrder.Click();
         }
 
