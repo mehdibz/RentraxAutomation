@@ -78,9 +78,13 @@ namespace RentraxAutomation
 
         public static void Credit_Card_Info()
         {
-            Features.ScrollToView(By.XPath("//*[@id='card - element']/div/iframe"));
-            
-            //*[@id="card-element"]/div/iframe
+            Features.ScrollToView(By.XPath("//*[@id='payment_form']/div/div/div/iframe"));
+            var nameOnCard = Driver.Instance.FindElement(By.XPath("//*[@id='payment_form']/div[1]/input"));
+            nameOnCard.SendKeys("Mehdi Badiezadegan");
+            IWebElement detailFrame = Driver.Instance.FindElement(By.XPath("//*[@id='payment_form']/div/div/div/iframe"));
+            Driver.Instance.SwitchTo().Frame(detailFrame);
+            IWebElement insideElement = Driver.Instance.FindElement(By.XPath("//*[@id='root']/form"));
+            insideElement.Click();
             var creadit_number = Driver.Instance.FindElement(By.XPath("//*[@id='root']/form/div/div[2]/span[1]/span[2]/label/input"));
             creadit_number.SendKeys("4242 4242 4242 4242");
             var date = Driver.Instance.FindElement(By.XPath("//*[@id='root']/form/div/div[2]/span[2]/span/label/input"));
@@ -89,10 +93,6 @@ namespace RentraxAutomation
             cvc.SendKeys("242");
             var zip = Driver.Instance.FindElement(By.XPath("//*[@id='root']/form/div/div[2]/span[4]/span/label/input"));
             zip.SendKeys("42424");
-            //creadit number = 4242 4242 4242 4242
-            //date = 04 / 24
-            //cvc = 242
-            //zip = 42424
         }
 
         public static void Pay()
