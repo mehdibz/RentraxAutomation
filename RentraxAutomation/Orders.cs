@@ -42,23 +42,30 @@ namespace RentraxAutomation
             var Address = Driver.Instance.FindElement(By.CssSelector("#address_street"));
             Address.SendKeys("Fullerton Ave");
             Driver.Wait(4, By.XPath("//*[@id='printable']/div/div/div/div/section/div[1]/div[1]/div/div[2]/div[1]"));
-            Features.ScrollToView(By.XPath("//*[@id='printable']/div/div/div/div/section/div[3]/div[1]/div[2]/div/div[2]/div[3]/button[1]"));
         }
 
         public static void I_want_To_Rent()
         {
             //Select the SingleBike
+            Driver.Wait(2, By.XPath("//*[@id='printable']/div/div/div/div/section/div[3]/div[1]/div[2]/div/div/div[2]/button[1]"));
+            Features.ScrollToView(By.XPath("//*[@id='printable']/div/div/div/div/section/div[3]/div[1]/div[2]/div/div/div[2]/button[1]"));
+                                            
             var singleBike = Driver.Instance.FindElement(By.XPath("//*[@id='printable']/div/div/div/div/section/div[3]/div[1]/div[2]/div/div/div[2]/button[1]"));
             singleBike.Click();
-            var selectBike = Driver.Instance.FindElement(By.CssSelector("//*[@id='printable']/div/div/div/div/section/div[3]/div[1]/div[2]/div/div[2]/div[1]/div/div[1]/div[2]/select"));
+            var selectBike = Driver.Instance.FindElement(By.XPath("//*[@id='printable']/div/div/div/div/section/div[3]/div[1]/div[2]/div/div[2]/div[1]/div/div[1]/div[2]/select"));
             selectBike.Click();
-            var selectedBike = Driver.Instance.FindElement(By.CssSelector("//*[@id='printable']/div/div/div/div/section/div[3]/div[1]/div[2]/div/div[2]/div[1]/div/div[1]/div[2]/select/option[3]"));
+            var selectedBike = Driver.Instance.FindElement(By.XPath("//*[@id='printable']/div/div/div/div/section/div[3]/div[1]/div[2]/div/div[2]/div[1]/div/div[1]/div[2]/select/option[3]"));
             selectedBike.Click();
         }
 
         public static void Rental_Period()
         {
-            
+            //Check Rental Period 
+            Features.ScrollToView(By.XPath("//*[@id='printable']/div/div/div/div/section/div[4]/div/div[1]/div[1]/div"));
+            var Duration = Driver.Instance.FindElement(By.XPath("//*[@id='printable']/div/div/div/div/section/div[4]/div/div[2]/form/div/div/div/div[1]/div[3]/div/div/select"));
+            Duration.Click();
+            var SpecificDuration = Driver.Instance.FindElement(By.XPath("//*[@id='printable']/div/div/div/div/section/div[4]/div/div[2]/form/div/div/div/div[1]/div[3]/div/div/select/option[3]"));
+            SpecificDuration.Click();
         }
 
         public static void RentType()
@@ -71,7 +78,21 @@ namespace RentraxAutomation
 
         public static void Credit_Card_Info()
         {
+            Features.ScrollToView(By.XPath("//*[@id='card - element']/div/iframe"));
             
+            //*[@id="card-element"]/div/iframe
+            var creadit_number = Driver.Instance.FindElement(By.XPath("//*[@id='root']/form/div/div[2]/span[1]/span[2]/label/input"));
+            creadit_number.SendKeys("4242 4242 4242 4242");
+            var date = Driver.Instance.FindElement(By.XPath("//*[@id='root']/form/div/div[2]/span[2]/span/label/input"));
+            date.SendKeys("04 / 24");
+            var cvc = Driver.Instance.FindElement(By.XPath("//*[@id='root']/form/div/div[2]/span[3]/span/label/input"));
+            cvc.SendKeys("242");
+            var zip = Driver.Instance.FindElement(By.XPath("//*[@id='root']/form/div/div[2]/span[4]/span/label/input"));
+            zip.SendKeys("42424");
+            //creadit number = 4242 4242 4242 4242
+            //date = 04 / 24
+            //cvc = 242
+            //zip = 42424
         }
 
         public static void Pay()
@@ -87,23 +108,33 @@ namespace RentraxAutomation
         public static void Check_Availability()
         {
             //Check Availability 
-            var availability = Driver.Instance.FindElement(By.CssSelector("# printable > div > div > div > div > section > div.clearfix.margin-bottom-20.addMarginBothSide.ng-scope > div.col-xs-2.ng-scope > button"));
+            Features.ScrollToView(By.XPath("//*[@id='printable']/div/div/div/div/section/div[8]/div[3]/button"));
+            var availability = Driver.Instance.FindElement(By.XPath("//*[@id='printable']/div/div/div/div/section/div[8]/div[3]/button"));
             availability.Click();
+            //Features.ScrollToView(By.XPath("//*[@id='printable']/div/div/div/div/section/div[3]/div[1]/div[1]/div[1]/div"));
         }
 
         public static void Would_Like_To_Purchase()
         {
-            
+            Features.ScrollToView(By.XPath("//*[@id='printable']/div/div/div/div/section/div[6]/div/div[2]/div[3]/span"));
+            var Purchased_Item_category = Driver.Instance.FindElement(By.XPath("//*[@id='printable']/div/div/div/div/section/div[6]/div/div[2]/div[2]/button[1]"));
+            Purchased_Item_category.Click();
+            var Purchased_Item_Dropdown = Driver.Instance.FindElement(By.XPath("//*[@id='printable']/div/div/div/div/section/div[6]/div/div[2]/div[1]/div/div/div[1]/select"));
+            Purchased_Item_Dropdown.Click();
+            var Purchased_Item = Driver.Instance.FindElement(By.XPath("//*[@id='printable']/div/div/div/div/section/div[6]/div/div[2]/div[1]/div/div/div[1]/select/option[2]"));
+            Purchased_Item.Click();
         }
 
         public static void Borrow_Items()
         {
-            
-        }
-
-        public static void Page_Scroll(int x, int y)
-        {
-
+            // Borrow Items
+            Features.ScrollToView(By.XPath("//*[@id='printable']/div/div/div/div/section/div[6]/div/div[1]/div[1]/div"));
+            var SafetyGear = Driver.Instance.FindElement(By.XPath("//*[@id='printable']/div/div/div/div/section/div[5]/div/div[2]/div[2]/button[1]"));
+            SafetyGear.Click();
+            var SafetyGear_Dropdown = Driver.Instance.FindElement(By.XPath("//*[@id='printable']/div/div/div/div/section/div[5]/div/div[2]/div[1]/div/div/div[1]/select"));
+            SafetyGear_Dropdown.Click();
+            var SafetyGearItem = Driver.Instance.FindElement(By.XPath("//*[@id='printable']/div/div/div/div/section/div[5]/div/div[2]/div[1]/div/div/div[1]/select/option[2]"));
+            SafetyGearItem.Click();
         }
     }
 }

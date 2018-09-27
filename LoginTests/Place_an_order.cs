@@ -22,17 +22,15 @@ namespace Tests
             Orders.RentType();
             Orders.Customer_Info();
             Orders.I_want_To_Rent();
-
-            /*
             Orders.Check_Availability();
             Orders.Rental_Period();
             Orders.Borrow_Items();
             Orders.Would_Like_To_Purchase();
             Orders.Credit_Card_Info();
 
-            Orders.SkipPaymentAndSubmit();
-            Orders.Pay();
-            */
+            /* Orders.SkipPaymentAndSubmit();
+             Orders.Pay();
+             */
 
 
             //Assert.IsTrue(DashboardPage.IsAt, "Failed to login.");
