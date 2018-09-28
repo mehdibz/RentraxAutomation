@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace RentraxAutomation
@@ -93,16 +94,23 @@ namespace RentraxAutomation
             cvc.SendKeys("242");
             var zip = Driver.Instance.FindElement(By.XPath("//*[@id='root']/form/div/div[2]/span[4]/span/label/input"));
             zip.SendKeys("42424");
+            Driver.Instance.SwitchTo().DefaultContent();
         }
 
         public static void Pay()
         {
-            
+            Driver.Wait(6, By.XPath("//*[@id='printable']/div/div/div/div/section/div[8]/input"));
+            Features.ScrollToView(By.XPath("//*[@id='printable']/div/div/div/div/section/div[8]/input"));
+            var pay = Driver.Instance.FindElement(By.XPath("//*[@id='printable']/div/div/div/div/section/div[8]/input"));
+            Thread.Sleep(4000);
+            pay.Click();
         }
 
         public static void SkipPaymentAndSubmit()
         {
-            
+            Features.ScrollToView(By.XPath("//*[@id='printable']/div/div/div/div/section/div[8]/div[3]/button"));
+            var Submit = Driver.Instance.FindElement(By.XPath("//*[@id='printable']/div/div/div/div/section/div[8]/div[3]/button"));
+            Submit.Click();
         }
 
         public static void Check_Availability()

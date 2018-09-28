@@ -10,12 +10,10 @@ namespace RentraxAutomation
 {
     public static class Features
     {
-        
         public static void ScrollTo(int xPosition = 0, int yPosition = 0)
         {
-           // var js = String.Format("window.scrollTo({0}, {1})", xPosition, yPosition);
             var js = String.Format("window.scrollTo({0}, {1})", xPosition, yPosition);
-            Driver.Instance.ExecuteJavaScript("window.scrollTo(0,300)");
+            Driver.Instance.ExecuteJavaScript("window.scrollTo(0,400)");
         }
 
         public static IWebElement ScrollToView(By selector)
@@ -32,15 +30,12 @@ namespace RentraxAutomation
             {
                 ScrollTo(0, element.Location.Y - 100); // Make sure element is in the view but below the top navigation pane
             }
-
         }
-
         /*
         var element = Driver.Instance.FindElement(By.XPath("//*[@id='printable']/div/div/div/div/section/div[3]/div[1]/div[2]/div/div/div[2]/button[1]"));
         Actions actions = new Actions(Driver.Instance);
         actions.MoveToElement(element);
         actions.Perform();
         */
-
     }
 }
