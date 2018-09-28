@@ -19,8 +19,6 @@ namespace RentraxAutomation
                 if (Span_tag.Text == "OPERATIONS")
                     return true;    
                 return false;
-                //Console.WriteLine(Span_tag.GetAttribute("value") + "==> Hello Mehdi");
-                //Console.WriteLine(Span_tag.Text);
             }
         }
     }

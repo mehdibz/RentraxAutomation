@@ -36,8 +36,6 @@ namespace RentraxAutomation
 
         public void Login()
         {
-           // Driver.Wait(5);
-
             //click employee login
             var firstPage = Driver.Instance.FindElement(By.CssSelector("#printable > nav > div > div.collapse.navbar-collapse.navbar-right.navbar-main-collapse > ul > li:nth-child(1)"));
             firstPage.Click();
@@ -66,4 +64,3 @@ namespace RentraxAutomation
         }
     }
 }
-

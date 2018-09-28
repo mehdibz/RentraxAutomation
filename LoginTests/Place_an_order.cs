@@ -31,7 +31,7 @@ namespace Tests
             Orders.Pay();
 
             //Assert.IsTrue(DashboardPage.IsAt, "Failed to login.");
-            // Assert.IsTrue(DashboardPage.IsAt, "Failed to login.");
+            //Assert.IsTrue(DashboardPage.IsAt, "Failed to login.");
         }
 
         [TestCleanup]
