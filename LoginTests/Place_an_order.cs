@@ -27,17 +27,15 @@ namespace Tests
             Orders.Borrow_Items();
             Orders.Would_Like_To_Purchase();
             Orders.Credit_Card_Info();
-            // Orders.SkipPaymentAndSubmit();
-            Orders.Pay();
-
-            //Assert.IsTrue(DashboardPage.IsAt, "Failed to login.");
+            //Orders.SkipPaymentAndSubmit();
+            Assert.IsTrue(Orders.Pay());
             //Assert.IsTrue(DashboardPage.IsAt, "Failed to login.");
         }
 
         [TestCleanup]
         public void CleanUp()
         {
-           // Driver.Close();
+           Driver.Close();
         }
     }
 }

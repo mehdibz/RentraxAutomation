@@ -3,6 +3,7 @@ using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support.Extensions;
 using OpenQA.Selenium.Support.UI;
 using System;
+using System.Threading;
 
 namespace RentraxAutomation
 {
@@ -19,6 +20,7 @@ namespace RentraxAutomation
 
         public static void Close()
         {
+            Thread.Sleep(5000);
             Instance.Close();
         }
 

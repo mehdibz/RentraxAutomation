@@ -5,6 +5,7 @@ using OpenQA.Selenium.Support.Extensions;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -19,6 +20,8 @@ namespace RentraxAutomation
             //click on Rent Order
             var rentOrder = Driver.Instance.FindElement(By.CssSelector("#printable > div.tiles.margin-bototm-30.padding-left-tiles > a:nth-child(2) > div"));
             rentOrder.Click();
+            //Debug.Write(DashboardPage.CheckUrl("admin/dashboard"));
+            //Debug.Write("###=Heloooooooooo Mehdiiiiiiiiiii######");
         }
 
         public static void NewOrder()
@@ -97,19 +100,21 @@ namespace RentraxAutomation
             Driver.Instance.SwitchTo().DefaultContent();
         }
 
-        public static void Pay()
+        public static Boolean Pay()
         {
             Driver.Wait(6, By.XPath("//*[@id='printable']/div/div/div/div/section/div[8]/input"));
             Features.ScrollToView(By.XPath("//*[@id='printable']/div/div/div/div/section/div[8]/input"));
             var pay = Driver.Instance.FindElement(By.XPath("//*[@id='printable']/div/div/div/div/section/div[8]/input"));
             Thread.Sleep(4000);
             pay.Click();
+            Driver.Wait(6, By.XPath("//*[@id='printable']/div/div/div/div[2]/div/div/a[2]/small"));
+            return DashboardPage.Check(By.XPath("//*[@id='printable']/div/div/div/div[2]/div/div/a[2]/small"), "DELIVERED ORDERS");  
         }
 
         public static void SkipPaymentAndSubmit()
         {
-            Features.ScrollToView(By.XPath("//*[@id='printable']/div/div/div/div/section/div[8]/div[3]/button"));
-            var Submit = Driver.Instance.FindElement(By.XPath("//*[@id='printable']/div/div/div/div/section/div[8]/div[3]/button"));
+            Features.ScrollToView(By.XPath("//*[@id='printable']/div/div/div/div/section/div[7]/div/div[3]/div/button"));
+            var Submit = Driver.Instance.FindElement(By.XPath("//*[@id='printable']/div/div/div/div/section/div[7]/div/div[3]/div/button"));
             Submit.Click();
         }
 

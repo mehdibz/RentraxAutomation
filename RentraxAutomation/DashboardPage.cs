@@ -21,5 +21,14 @@ namespace RentraxAutomation
                 return false;
             }
         }
+
+        public static bool Check(By element,String text)
+        {
+            var tag = Driver.Instance.FindElement(element);
+            if (tag.Text == text)
+                return true;
+            return false;
+        }
     }
 }
+//Debug.Write("====>>>>  "+ url +"  <<<=====");
