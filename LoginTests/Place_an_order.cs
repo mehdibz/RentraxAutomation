@@ -15,27 +15,29 @@ namespace Tests
         [TestMethod]
         public void MakeAnOrder()
         {
-            LoginFramework.GoTo();
-            LoginFramework.LoginAs("bz.mehdi@gmail.com").WithPassword("as12341234").Login();
-            Orders.GoToRent();
-            Orders.NewOrder();
-            Orders.RentType();
-            Orders.Customer_Info();
-            Orders.I_want_To_Rent();
-            Orders.Check_Availability();
-            Orders.Rental_Period();
-            Orders.Borrow_Items();
-            Orders.Would_Like_To_Purchase();
-            Orders.Credit_Card_Info();
-            //Orders.SkipPaymentAndSubmit();
-            Assert.IsTrue(Orders.Pay());
-            //Assert.IsTrue(DashboardPage.IsAt, "Failed to login.");
+            Login_OK login = new Login_OK();
+            login.User_Can_Login();
+            OrderFramework.GoToRent();
+            OrderFramework.NewOrder();
+            OrderFramework.RentType();
+            OrderFramework.Customer_Info();
+            OrderFramework.I_want_To_Rent();
+            OrderFramework.Check_Availability();
+            OrderFramework.Rental_Period();
+            OrderFramework.Borrow_Items();
+            OrderFramework.Would_Like_To_Purchase();
+            OrderFramework.TermAndCondition();
+            OrderFramework.SignTerm();
+            OrderFramework.Credit_Card_Info();
+       //Orders.SkipPaymentAndSubmit();
+       //     Assert.IsTrue(Orders.Pay());
+       //Assert.IsTrue(DashboardPage.IsAt, "Failed to login.");
         }
 
         [TestCleanup]
         public void CleanUp()
         {
-           Driver.Close();
+           //Driver.Close();
         }
     }
 }

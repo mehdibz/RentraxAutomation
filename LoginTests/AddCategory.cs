@@ -5,7 +5,7 @@ using RentraxAutomation;
 namespace Tests
 {
     [TestClass]
-    public class LoginTests
+    public class AddCategory
     {
         [TestInitialize]
         public void Init()
@@ -13,17 +13,19 @@ namespace Tests
             Driver.Initialize();
         }
         [TestMethod]
-        public void User_Can_Login()
+        public void Add_category()
         {
-            LoginFramework.GoTo();
-            LoginFramework.LoginAs("bz.mehdi@gmail.com").WithPassword("as12341234").Login();
-            Assert.IsTrue(DashboardPage.IsAt,"Failed to login.");
+            Login_OK login = new Login_OK();
+            login.User_Can_Login();
+            CategoryFramework.GoToCategory();
+            //Assert.IsTrue(DashboardPage.IsAt, "Failed to login.");
         }
 
         [TestCleanup]
         public void CleanUp()
         {
-            Driver.Close();
+            // Driver.Close();
         }
     }
 }
+

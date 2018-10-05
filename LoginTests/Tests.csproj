@@ -50,7 +50,9 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LoginTests.cs" />
+    <Compile Include="AddCategory.cs" />
+    <Compile Include="FailureLogin .cs" />
+    <Compile Include="SuccessfullyLogin.cs" />
     <Compile Include="Place_an_order.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

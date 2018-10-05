@@ -13,15 +13,67 @@ using System.Threading.Tasks;
 
 namespace RentraxAutomation
 {
-    public class Orders
+    public class OrderFramework
     {
         public static void GoToRent()
         {
             //click on Rent Order
+            Driver.Wait(2, By.CssSelector("#printable > div.tiles.margin-bototm-30.padding-left-tiles > a:nth-child(2) > div"));
             var rentOrder = Driver.Instance.FindElement(By.CssSelector("#printable > div.tiles.margin-bototm-30.padding-left-tiles > a:nth-child(2) > div"));
             rentOrder.Click();
-            //Debug.Write(DashboardPage.CheckUrl("admin/dashboard"));
-            //Debug.Write("###=Heloooooooooo Mehdiiiiiiiiiii######");
+        }
+
+        public static void TermAndCondition()
+        {
+            //
+            var ReservationTerms = Driver.Instance.FindElement(By.XPath("//*[@id='renters']/tbody/tr[1]/td[1]/div"));
+            ReservationTerms.Click();
+        }
+
+        public static void SignTerm()
+        {
+            Driver.Wait(2, By.XPath("//*[@id='renter_is_minor0']"));
+            var signing_behalf = Driver.Instance.FindElement(By.XPath("//*[@id='renter_is_minor0']"));
+            signing_behalf.Click();
+
+            var canvasArea = Driver.Instance.FindElement(By.XPath("//*[@id='canvas0']"));
+            canvasArea.Click();
+
+            var canvas0 = Driver.Instance.FindElement(By.XPath("//*[@id='canvas0']"));
+            Actions actionBuilder = new Actions(Driver.Instance);
+
+            actionBuilder.Click(canvas0).Perform();
+            actionBuilder.ClickAndHold(canvas0)
+                .MoveByOffset(140, 10)
+                .MoveByOffset(0, -45)
+                .MoveByOffset(-30, 10)
+                .MoveByOffset(-20, 2)
+                .Release().Build().Perform();
+            Thread.Sleep(500);
+            actionBuilder.ClickAndHold(canvas0)
+                .MoveByOffset(-140, 5)
+                .MoveByOffset(0, -45)
+                .MoveByOffset(-30, 10)
+                .MoveByOffset(-20, 2)
+                .Release().Build().Perform();
+            Thread.Sleep(500);
+            actionBuilder.ClickAndHold(canvas0)
+                .MoveByOffset(130, 50)
+                .MoveByOffset(0, -45)
+                .MoveByOffset(-20, 20)
+                .MoveByOffset(-25, 5)
+                .Release().Build().Perform();
+            Thread.Sleep(500);
+            actionBuilder.ClickAndHold(canvas0)
+                .MoveByOffset(-120, -30)
+                .MoveByOffset(0, -35)
+                .MoveByOffset(21, -10)
+                .MoveByOffset(20, -10)
+                .Release().Build().Perform();
+            Thread.Sleep(500);
+            var save_agree = Driver.Instance.FindElement(By.XPath("//*[@id='btn_agree0']"));
+            save_agree.Click();
+            Thread.Sleep(4000);
         }
 
         public static void NewOrder()
@@ -52,8 +104,7 @@ namespace RentraxAutomation
         {
             //Select the SingleBike
             Driver.Wait(2, By.XPath("//*[@id='printable']/div/div/div/div/section/div[3]/div[1]/div[2]/div/div/div[2]/button[1]"));
-            Features.ScrollToView(By.XPath("//*[@id='printable']/div/div/div/div/section/div[3]/div[1]/div[2]/div/div/div[2]/button[1]"));
-                                            
+//            Features.ScrollToView(By.XPath("//*[@id='printable']/div/div/div/div/section/div[3]/div/div[1]/div[1]/div"));
             var singleBike = Driver.Instance.FindElement(By.XPath("//*[@id='printable']/div/div/div/div/section/div[3]/div[1]/div[2]/div/div/div[2]/button[1]"));
             singleBike.Click();
             var selectBike = Driver.Instance.FindElement(By.XPath("//*[@id='printable']/div/div/div/div/section/div[3]/div[1]/div[2]/div/div[2]/div[1]/div/div[1]/div[2]/select"));
@@ -65,7 +116,6 @@ namespace RentraxAutomation
         public static void Rental_Period()
         {
             //Check Rental Period 
-            Features.ScrollToView(By.XPath("//*[@id='printable']/div/div/div/div/section/div[4]/div/div[1]/div[1]/div"));
             var Duration = Driver.Instance.FindElement(By.XPath("//*[@id='printable']/div/div/div/div/section/div[4]/div/div[2]/form/div/div/div/div[1]/div[3]/div/div/select"));
             Duration.Click();
             var SpecificDuration = Driver.Instance.FindElement(By.XPath("//*[@id='printable']/div/div/div/div/section/div[4]/div/div[2]/form/div/div/div/div[1]/div[3]/div/div/select/option[3]"));
@@ -82,7 +132,6 @@ namespace RentraxAutomation
 
         public static void Credit_Card_Info()
         {
-            Features.ScrollToView(By.XPath("//*[@id='payment_form']/div/div/div/iframe"));
             var nameOnCard = Driver.Instance.FindElement(By.XPath("//*[@id='payment_form']/div[1]/input"));
             nameOnCard.SendKeys("Mehdi Badiezadegan");
             IWebElement detailFrame = Driver.Instance.FindElement(By.XPath("//*[@id='payment_form']/div/div/div/iframe"));
@@ -100,7 +149,7 @@ namespace RentraxAutomation
             Driver.Instance.SwitchTo().DefaultContent();
         }
 
-        public static Boolean Pay()
+        public static bool Pay()
         {
             Driver.Wait(6, By.XPath("//*[@id='printable']/div/div/div/div/section/div[8]/input"));
             Features.ScrollToView(By.XPath("//*[@id='printable']/div/div/div/div/section/div[8]/input"));
@@ -108,12 +157,11 @@ namespace RentraxAutomation
             Thread.Sleep(4000);
             pay.Click();
             Driver.Wait(6, By.XPath("//*[@id='printable']/div/div/div/div[2]/div/div/a[2]/small"));
-            return DashboardPage.Check(By.XPath("//*[@id='printable']/div/div/div/div[2]/div/div/a[2]/small"), "DELIVERED ORDERS");  
+            return DashboardFramework.Check(By.XPath("//*[@id='printable']/div/div/div/div[2]/div/div/a[2]/small"), "DELIVERED ORDERS");  
         }
 
         public static void SkipPaymentAndSubmit()
         {
-            Features.ScrollToView(By.XPath("//*[@id='printable']/div/div/div/div/section/div[7]/div/div[3]/div/button"));
             var Submit = Driver.Instance.FindElement(By.XPath("//*[@id='printable']/div/div/div/div/section/div[7]/div/div[3]/div/button"));
             Submit.Click();
         }
@@ -121,15 +169,12 @@ namespace RentraxAutomation
         public static void Check_Availability()
         {
             //Check Availability 
-            Features.ScrollToView(By.XPath("//*[@id='printable']/div/div/div/div/section/div[8]/div[3]/button"));
-            var availability = Driver.Instance.FindElement(By.XPath("//*[@id='printable']/div/div/div/div/section/div[8]/div[3]/button"));
+            var availability = Driver.Instance.FindElement(By.XPath("//*[@id='Renter_12']/button"));
             availability.Click();
-            //Features.ScrollToView(By.XPath("//*[@id='printable']/div/div/div/div/section/div[3]/div[1]/div[1]/div[1]/div"));
         }
 
         public static void Would_Like_To_Purchase()
         {
-            Features.ScrollToView(By.XPath("//*[@id='printable']/div/div/div/div/section/div[6]/div/div[2]/div[3]/span"));
             var Purchased_Item_category = Driver.Instance.FindElement(By.XPath("//*[@id='printable']/div/div/div/div/section/div[6]/div/div[2]/div[2]/button[1]"));
             Purchased_Item_category.Click();
             var Purchased_Item_Dropdown = Driver.Instance.FindElement(By.XPath("//*[@id='printable']/div/div/div/div/section/div[6]/div/div[2]/div[1]/div/div/div[1]/select"));
@@ -141,7 +186,6 @@ namespace RentraxAutomation
         public static void Borrow_Items()
         {
             // Borrow Items
-            Features.ScrollToView(By.XPath("//*[@id='printable']/div/div/div/div/section/div[6]/div/div[1]/div[1]/div"));
             var SafetyGear = Driver.Instance.FindElement(By.XPath("//*[@id='printable']/div/div/div/div/section/div[5]/div/div[2]/div[2]/button[1]"));
             SafetyGear.Click();
             var SafetyGear_Dropdown = Driver.Instance.FindElement(By.XPath("//*[@id='printable']/div/div/div/div/section/div[5]/div/div[2]/div[1]/div/div/div[1]/select"));

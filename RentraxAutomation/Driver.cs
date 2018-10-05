@@ -28,7 +28,9 @@ namespace RentraxAutomation
         {
             var wait = new WebDriverWait(Driver.Instance, TimeSpan.FromSeconds(x));
             //wait.Until(d => d.SwitchTo().ActiveElement().GetAttribute("Id") == "headertext");
-            wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(element));
+            //wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(element));
+            wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(element));
+            
         }
     }
 }

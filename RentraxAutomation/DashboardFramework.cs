@@ -9,7 +9,7 @@ using Console = System.Diagnostics.Debug;
 
 namespace RentraxAutomation
 {
-    public class DashboardPage
+    public class DashboardFramework
     {
         public static bool IsAt
         {

@@ -54,11 +54,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DashboardPage.cs" />
+    <Compile Include="CategoryFramework.cs" />
+    <Compile Include="DashboardFramework.cs" />
     <Compile Include="Driver.cs" />
     <Compile Include="Features.cs" />
     <Compile Include="LoginFramework.cs" />
-    <Compile Include="Orders.cs" />
+    <Compile Include="OrderFramework.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
