@@ -23,10 +23,87 @@ namespace RentraxAutomation
             rentOrder.Click();
         }
 
+        public static void MultiRenter()
+        {
+            var AddRenter = Driver.Instance.FindElement(By.XPath("//*[@id='printable']/div/div/div/div/section/div[3]/div[2]/button"));
+            AddRenter.Click();
+            var SelectCategory = Driver.Instance.FindElement(By.XPath("//*[@id='printable']/div/div/div/div/section/div[3]/div[2]/div[2]/div/div/div[2]/button[1]"));
+            SelectCategory.Click();
+            var selectItem = Driver.Instance.FindElement(By.XPath("//*[@id='printable']/div/div/div/div/section/div[3]/div[2]/div[2]/div/div[2]/div[1]/div/div[1]/div[2]/select"));
+            selectItem.Click();
+            var selectItemValue = Driver.Instance.FindElement(By.XPath("//*[@id='printable']/div/div/div/div/section/div[3]/div[2]/div[2]/div/div[2]/div[1]/div/div[1]/div[2]/select/option[2]"));
+            selectItemValue.Click();
+            var MultiRenterName = Driver.Instance.FindElement(By.XPath("//*[@id='printable']/div/div/div/div/section/div[3]/div[2]/div[1]/div[1]/div/input"));
+            MultiRenterName.SendKeys("Second Renter");
+        }
+
+        public static void Renter_Attributes()
+        {
+            Driver.Wait(2, By.XPath("//*[@id='renter_section_id_1']/div/div[2]/div[1]/div/div[4]/div[2]/div[1]/div/div/select"));
+            var selectAttribute1 = Driver.Instance.FindElement(By.XPath("//*[@id='renter_section_id_1']/div/div[2]/div[1]/div/div[4]/div[2]/div[1]/div/div/select"));
+            selectAttribute1.Click();
+            var selectAttribute1_value = Driver.Instance.FindElement(By.XPath("//*[@id='renter_section_id_1']/div/div[2]/div[1]/div/div[4]/div[2]/div[1]/div/div/select/option[2]"));
+            selectAttribute1_value.Click();
+
+            var selectAttribute2 = Driver.Instance.FindElement(By.XPath("//*[@id='renter_section_id_1']/div/div[2]/div[1]/div/div[4]/div[2]/div[2]/div/div/select"));
+            selectAttribute2.Click();
+            var selectAttribute2_value = Driver.Instance.FindElement(By.XPath("//*[@id='renter_section_id_1']/div/div[2]/div[1]/div/div[4]/div[2]/div[2]/div/div/select/option[3]"));
+            selectAttribute2_value.Click();
+
+            var selectAttribute3 = Driver.Instance.FindElement(By.XPath("//*[@id='renter_section_id_1']/div/div[2]/div[1]/div/div[4]/div[2]/div[3]/div/div/select"));
+            selectAttribute3.Click();
+            var selectAttribute3_value = Driver.Instance.FindElement(By.XPath("//*[@id='renter_section_id_1']/div/div[2]/div[1]/div/div[4]/div[2]/div[3]/div/div/select/option[3]"));
+            selectAttribute3_value.Click();
+
+            var selectAttribute4 = Driver.Instance.FindElement(By.XPath("//*[@id='renter_section_id_1']/div/div[2]/div[1]/div/div[4]/div[2]/div[4]/div/div/select"));
+            selectAttribute4.Click();
+            var selectAttribute4_value = Driver.Instance.FindElement(By.XPath("//*[@id='renter_section_id_1']/div/div[2]/div[1]/div/div[4]/div[2]/div[4]/div/div/select/option[3]"));
+            selectAttribute4_value.Click();
+
+            var selectAttribute5 = Driver.Instance.FindElement(By.XPath("//*[@id='renter_section_id_1']/div/div[2]/div[1]/div/div[4]/div[2]/div[5]/div/div/select"));
+            selectAttribute5.Click();
+            var selectAttribute5_value = Driver.Instance.FindElement(By.XPath("//*[@id='renter_section_id_1']/div/div[2]/div[1]/div/div[4]/div[2]/div[5]/div/div/select/option[3]"));
+            selectAttribute5_value.Click();
+        }
+
+        public static void Renter_Attributes2()
+        {
+            Driver.Wait(2, By.XPath("//*[@id='renter_section_id_1']/div/div[2]/div[1]/div/div[4]/div[2]/div[1]/div/div/select"));
+            var selectAttribute1 = Driver.Instance.FindElement(By.XPath("//*[@id='renter_section_id_1']/div/div[2]/div[1]/div/div[4]/div[2]/div[1]/div/div/select"));
+            selectAttribute1.Click();
+            var selectAttribute1_value = Driver.Instance.FindElement(By.XPath("//*[@id='renter_section_id_1']/div/div[2]/div[1]/div/div[4]/div[2]/div[1]/div/div/select/option[2]"));
+            selectAttribute1_value.Click();
+
+            var selectAttribute2 = Driver.Instance.FindElement(By.XPath("//*[@id='renter_section_id_1']/div/div[2]/div[1]/div/div[4]/div[2]/div[2]/div/div/select"));
+            selectAttribute2.Click();
+            var selectAttribute2_value = Driver.Instance.FindElement(By.XPath("//*[@id='renter_section_id_1']/div/div[2]/div[1]/div/div[4]/div[2]/div[2]/div/div/select/option[3]"));
+            selectAttribute2_value.Click();
+
+            var selectAttribute3 = Driver.Instance.FindElement(By.XPath("//*[@id='renter_section_id_1']/div/div[2]/div[1]/div/div[4]/div[2]/div[3]/div/div/select"));
+            selectAttribute3.Click();
+            var selectAttribute3_value = Driver.Instance.FindElement(By.XPath("//*[@id='renter_section_id_1']/div/div[2]/div[1]/div/div[4]/div[2]/div[3]/div/div/select/option[3]"));
+            selectAttribute3_value.Click();
+
+            var selectAttribute4 = Driver.Instance.FindElement(By.XPath("//*[@id='renter_section_id_1']/div/div[2]/div[1]/div/div[4]/div[2]/div[4]/div/div/select"));
+            selectAttribute4.Click();
+            var selectAttribute4_value = Driver.Instance.FindElement(By.XPath("//*[@id='renter_section_id_1']/div/div[2]/div[1]/div/div[4]/div[2]/div[4]/div/div/select/option[3]"));
+            selectAttribute4_value.Click();
+
+            var selectAttribute5 = Driver.Instance.FindElement(By.XPath("//*[@id='renter_section_id_1']/div/div[2]/div[1]/div/div[4]/div[2]/div[5]/div/div/select"));
+            selectAttribute5.Click();
+            var selectAttribute5_value = Driver.Instance.FindElement(By.XPath("//*[@id='renter_section_id_1']/div/div[2]/div[1]/div/div[4]/div[2]/div[5]/div/div/select/option[3]"));
+            selectAttribute5_value.Click();
+        }
+
         public static void TermAndCondition()
         {
-            //
             var ReservationTerms = Driver.Instance.FindElement(By.XPath("//*[@id='renters']/tbody/tr[1]/td[1]/div"));
+            ReservationTerms.Click();
+        }
+
+        public static void TermAndCondition2()
+        {
+            var ReservationTerms = Driver.Instance.FindElement(By.XPath("//*[@id='renters']/tbody/tr[2]/td[1]/div"));
             ReservationTerms.Click();
         }
 
@@ -49,31 +126,69 @@ namespace RentraxAutomation
                 .MoveByOffset(-30, 10)
                 .MoveByOffset(-20, 2)
                 .Release().Build().Perform();
-            Thread.Sleep(500);
             actionBuilder.ClickAndHold(canvas0)
                 .MoveByOffset(-140, 5)
                 .MoveByOffset(0, -45)
                 .MoveByOffset(-30, 10)
                 .MoveByOffset(-20, 2)
                 .Release().Build().Perform();
-            Thread.Sleep(500);
             actionBuilder.ClickAndHold(canvas0)
                 .MoveByOffset(130, 50)
                 .MoveByOffset(0, -45)
                 .MoveByOffset(-20, 20)
                 .MoveByOffset(-25, 5)
                 .Release().Build().Perform();
-            Thread.Sleep(500);
             actionBuilder.ClickAndHold(canvas0)
                 .MoveByOffset(-120, -30)
                 .MoveByOffset(0, -35)
                 .MoveByOffset(21, -10)
                 .MoveByOffset(20, -10)
                 .Release().Build().Perform();
-            Thread.Sleep(500);
             var save_agree = Driver.Instance.FindElement(By.XPath("//*[@id='btn_agree0']"));
             save_agree.Click();
-            Thread.Sleep(4000);
+            Thread.Sleep(2000);
+        }
+
+        public static void SignTerm2()
+        {
+            Driver.Wait(2, By.XPath("//*[@id='renter_is_minor1']"));
+            var signing_behalf = Driver.Instance.FindElement(By.XPath("//*[@id='renter_is_minor1']"));
+            signing_behalf.Click();
+
+            var canvasArea = Driver.Instance.FindElement(By.XPath("//*[@id='canvas1']"));
+            canvasArea.Click();
+
+            var canvas0 = Driver.Instance.FindElement(By.XPath("//*[@id='canvas1']"));
+            Actions actionBuilder = new Actions(Driver.Instance);
+
+            actionBuilder.Click(canvas0).Perform();
+            actionBuilder.ClickAndHold(canvas0)
+                .MoveByOffset(140, 10)
+                .MoveByOffset(0, -45)
+                .MoveByOffset(-30, 10)
+                .MoveByOffset(-20, 2)
+                .Release().Build().Perform();
+            actionBuilder.ClickAndHold(canvas0)
+                .MoveByOffset(-140, 5)
+                .MoveByOffset(0, -45)
+                .MoveByOffset(-30, 10)
+                .MoveByOffset(-20, 2)
+                .Release().Build().Perform();
+            actionBuilder.ClickAndHold(canvas0)
+                .MoveByOffset(130, 50)
+                .MoveByOffset(0, -45)
+                .MoveByOffset(-20, 20)
+                .MoveByOffset(-25, 5)
+                .Release().Build().Perform();
+            actionBuilder.ClickAndHold(canvas0)
+                .MoveByOffset(-120, -30)
+                .MoveByOffset(0, -35)
+                .MoveByOffset(21, -10)
+                .MoveByOffset(20, -10)
+                .Release().Build().Perform();
+            var save_agree = Driver.Instance.FindElement(By.XPath("//*[@id='btn_agree1']"));
+            save_agree.Click();
+            Thread.Sleep(2000);
         }
 
         public static void NewOrder()
@@ -104,13 +219,12 @@ namespace RentraxAutomation
         {
             //Select the SingleBike
             Driver.Wait(2, By.XPath("//*[@id='printable']/div/div/div/div/section/div[3]/div[1]/div[2]/div/div/div[2]/button[1]"));
-//            Features.ScrollToView(By.XPath("//*[@id='printable']/div/div/div/div/section/div[3]/div/div[1]/div[1]/div"));
-            var singleBike = Driver.Instance.FindElement(By.XPath("//*[@id='printable']/div/div/div/div/section/div[3]/div[1]/div[2]/div/div/div[2]/button[1]"));
-            singleBike.Click();
-            var selectBike = Driver.Instance.FindElement(By.XPath("//*[@id='printable']/div/div/div/div/section/div[3]/div[1]/div[2]/div/div[2]/div[1]/div/div[1]/div[2]/select"));
-            selectBike.Click();
-            var selectedBike = Driver.Instance.FindElement(By.XPath("//*[@id='printable']/div/div/div/div/section/div[3]/div[1]/div[2]/div/div[2]/div[1]/div/div[1]/div[2]/select/option[3]"));
-            selectedBike.Click();
+            var selectCategory = Driver.Instance.FindElement(By.XPath("//*[@id='printable']/div/div/div/div/section/div[3]/div[1]/div[2]/div/div/div[2]/button[1]"));
+            selectCategory.Click();
+            var selectItem = Driver.Instance.FindElement(By.XPath("//*[@id='printable']/div/div/div/div/section/div[3]/div[1]/div[2]/div/div[2]/div[1]/div/div[1]/div[2]/select"));
+            selectItem.Click();
+            var selectItemValue = Driver.Instance.FindElement(By.XPath("//*[@id='printable']/div/div/div/div/section/div[3]/div[1]/div[2]/div/div[2]/div[1]/div/div[1]/div[2]/select/option[2]"));
+            selectItemValue.Click();
         }
 
         public static void Rental_Period()
@@ -151,10 +265,9 @@ namespace RentraxAutomation
 
         public static bool Pay()
         {
-            Driver.Wait(6, By.XPath("//*[@id='printable']/div/div/div/div/section/div[8]/input"));
-            Features.ScrollToView(By.XPath("//*[@id='printable']/div/div/div/div/section/div[8]/input"));
-            var pay = Driver.Instance.FindElement(By.XPath("//*[@id='printable']/div/div/div/div/section/div[8]/input"));
-            Thread.Sleep(4000);
+            Thread.Sleep(1000);
+            var pay = Driver.Instance.FindElement(By.XPath("//*[@id='printable']/div/div/div/div/section/div[9]/input"));
+            Thread.Sleep(2000);
             pay.Click();
             Driver.Wait(6, By.XPath("//*[@id='printable']/div/div/div/div[2]/div/div/a[2]/small"));
             return DashboardFramework.Check(By.XPath("//*[@id='printable']/div/div/div/div[2]/div/div/a[2]/small"), "DELIVERED ORDERS");  
@@ -162,14 +275,14 @@ namespace RentraxAutomation
 
         public static void SkipPaymentAndSubmit()
         {
-            var Submit = Driver.Instance.FindElement(By.XPath("//*[@id='printable']/div/div/div/div/section/div[7]/div/div[3]/div/button"));
+            var Submit = Driver.Instance.FindElement(By.XPath("//*[@id='Renter_10']/div/button"));
             Submit.Click();
         }
 
         public static void Check_Availability()
         {
             //Check Availability 
-            var availability = Driver.Instance.FindElement(By.XPath("//*[@id='Renter_12']/button"));
+            var availability = Driver.Instance.FindElement(By.XPath("//*[@id='Renter_13']/button"));
             availability.Click();
         }
 

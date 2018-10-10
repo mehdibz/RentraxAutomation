@@ -53,7 +53,23 @@
     <Compile Include="AddCategory.cs" />
     <Compile Include="FailureLogin .cs" />
     <Compile Include="SuccessfullyLogin.cs" />
-    <Compile Include="Place_an_order.cs" />
+    <Compile Include="TestCase_N12.cs" />
+    <Compile Include="TestCase_N14.cs" />
+    <Compile Include="TestCase_N15.cs" />
+    <Compile Include="TestCase_N16.cs" />
+    <Compile Include="TestCase_N17.cs" />
+    <Compile Include="TestCase_N13.cs" />
+    <Compile Include="TestCase_N23.cs" />
+    <Compile Include="TestCase_N24.cs" />
+    <Compile Include="TestCase_N25.cs" />
+    <Compile Include="TestCase_N22.cs" />
+    <Compile Include="TestCase_N_all.cs" />
+    <Compile Include="TestCase_N21.cs" />
+    <Compile Include="TestCase_N20.cs" />
+    <Compile Include="TestCase_N19.cs" />
+    <Compile Include="TestCase_N18.cs" />
+    <Compile Include="TestCase_N11.cs" />
+    <Compile Include="TestCase_N10.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

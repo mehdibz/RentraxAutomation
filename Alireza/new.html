@@ -1656,10 +1656,10 @@
         <div class="col-xs-3" ng-if="show_total_price_to_customer" id="Renter_11"><strong>Estimated Total Price:</strong> <span class="alert alert-warning show-as-div-mobile">{{ currency_symbol }}{{ order.total_price }}</span></div>
  <!-- add fix end -->       
         <!--one page-->
-        <input type="submit" wz-next value="{{submit_button}}" class="btn green btn-lg pull-right" title="Go to the next step" ng-click="getDeliveryPrice()" data-ng-disabled="wait || step1agreement() || (!order.order_from_time && show_from_time&&(is_online_reservation || reservation_type=='fixed')) || detailed_delivery_address_is_valid==0 || hotel_delivery_address_is_valid==0 || !order.customer_data_is_valid || (!delivery_address_is_valid && customer_delivery_address_type != 'detailed' && customer_delivery_address_type != 'hotel') || (is_online_reservation && order.delivery_postal_name == '') || (is_online_reservation && (order.zipcode == null || order.zipcode == ''))"/>
+        <input type="submit" wz-next value="{{submit_button}}" class="btn green btn-lg pull-right" id="Renter_12" title="Go to the next step" ng-click="getDeliveryPrice()" data-ng-disabled="wait || step1agreement() || (!order.order_from_time && show_from_time&&(is_online_reservation || reservation_type=='fixed')) || detailed_delivery_address_is_valid==0 || hotel_delivery_address_is_valid==0 || !order.customer_data_is_valid || (!delivery_address_is_valid && customer_delivery_address_type != 'detailed' && customer_delivery_address_type != 'hotel') || (is_online_reservation && order.delivery_postal_name == '') || (is_online_reservation && (order.zipcode == null || order.zipcode == ''))"/>
         <!--one page end-->
         <div class="col-xs-1"></div> 
-        <div class="col-xs-2" ng-if="order.is_admin && must_check_availability" id="Renter_12">  <!-- id added by Mehdi-->
+        <div class="col-xs-2" ng-if="order.is_admin && must_check_availability" id="Renter_13">  <!-- id added by Mehdi-->
             <button type="button" class="btn blue btn-lg " ng-click="getNumberOfAvailable()">{{ resource[locale]['check_availability']}}</button>
         </div>
 </div>

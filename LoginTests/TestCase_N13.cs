@@ -5,7 +5,7 @@ using RentraxAutomation;
 namespace Tests
 {
     [TestClass]
-    public class Place_an_order
+    public class TestCase_N13
     {
         [TestInitialize]
         public void Init()
@@ -22,22 +22,19 @@ namespace Tests
             OrderFramework.RentType();
             OrderFramework.Customer_Info();
             OrderFramework.I_want_To_Rent();
-            OrderFramework.Check_Availability();
             OrderFramework.Rental_Period();
             OrderFramework.Borrow_Items();
             OrderFramework.Would_Like_To_Purchase();
             OrderFramework.TermAndCondition();
             OrderFramework.SignTerm();
             OrderFramework.Credit_Card_Info();
-       //Orders.SkipPaymentAndSubmit();
-       //     Assert.IsTrue(Orders.Pay());
-       //Assert.IsTrue(DashboardPage.IsAt, "Failed to login.");
+            Assert.IsTrue(OrderFramework.Pay());
         }
 
         [TestCleanup]
         public void CleanUp()
         {
-           //Driver.Close();
+           Driver.Close();
         }
     }
 }
