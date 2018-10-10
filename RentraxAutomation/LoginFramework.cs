@@ -57,8 +57,6 @@ namespace RentraxAutomation
                 Driver.Wait(3, By.XPath("//html/body/div[3]/div/div/form/div/div[3]/div/div[2]"));
                 UsernameError = Driver.Instance.FindElement(By.XPath("//html/body/div[3]/div/div/form/div/div[3]/div/div[2]"));
                 PasswordError = Driver.Instance.FindElement(By.XPath("//html/body/div[3]/div/div/form/div/div[4]/div/div[2]"));
-                Debug.Write("UsernameError====>>>>  " + UsernameError.Text + "  <<<=====");
-                Debug.Write("PasswordError====>>>>  " + PasswordError.Text + "  <<<=====");
                 return true;
             }
 
@@ -66,7 +64,6 @@ namespace RentraxAutomation
             {
                 Driver.Wait(3, By.XPath("//html/body/div[3]/div/div/form/div/div[3]/div/div[2]"));
                 UsernameError = Driver.Instance.FindElement(By.XPath("//html/body/div[3]/div/div/form/div/div[3]/div/div[2]"));
-                Debug.Write("UsernameError====>>>>  " + UsernameError.Text + "  <<<=====");
                 if (UsernameError.Text == "The email field is required.")
                     return true;
             }
@@ -74,7 +71,6 @@ namespace RentraxAutomation
             {
                 Driver.Wait(3, By.XPath("//html/body/div[3]/div/div/form/div/div[4]/div/div[2]"));
                 PasswordError = Driver.Instance.FindElement(By.XPath("//html/body/div[3]/div/div/form/div/div[4]/div/div[2]"));
-                Debug.Write("PasswordError====>>>>  " + PasswordError.Text + "  <<<=====");
                 if (PasswordError.Text == "The password field is required.")
                     return true;
             }
@@ -82,7 +78,6 @@ namespace RentraxAutomation
             {
                 Driver.Wait(3, By.XPath("//html/body/div[3]/div/div/form/div/div[3]/div/div[2]"));
                 UsernameError = Driver.Instance.FindElement(By.XPath("//html/body/div[3]/div/div/form/div/div[3]/div/div[2]"));
-                Debug.Write("UsernameError====>>>>  " + UsernameError.Text + "  <<<=====");
                 if (UsernameError.Text == "These credentials do not match our records.")
                     return true;
             }
