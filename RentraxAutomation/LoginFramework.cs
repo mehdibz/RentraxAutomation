@@ -4,12 +4,13 @@ using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-
-
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace RentraxAutomation
 {
@@ -27,6 +28,20 @@ namespace RentraxAutomation
         public static LoginCommand LoginAs(string userName)
         {
             return new LoginCommand(userName);
+        }
+
+        public static String LoadData(string item)
+        {
+            string filepath = "../../../data.json";
+            string result = string.Empty;
+            String itemValue;
+            using (StreamReader r = new StreamReader(filepath))
+            {
+                var json = r.ReadToEnd();
+                var jobj = JObject.Parse(json);
+                itemValue = jobj.Property(item).Value.ToString();
+            }
+            return itemValue;
         }
     }
 

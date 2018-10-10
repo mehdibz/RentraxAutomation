@@ -203,15 +203,15 @@ namespace RentraxAutomation
             //Fill the customer form
             Driver.Wait(2, By.XPath("//*[@id='email']"));
             var email = Driver.Instance.FindElement(By.CssSelector("#email"));
-            email.SendKeys("bz.mehdi@gmail.com");
+            email.SendKeys(LoginFramework.LoadData("Email"));
             var firstName = Driver.Instance.FindElement(By.CssSelector("#first_name"));
-            firstName.SendKeys("Mehdi");
+            firstName.SendKeys(LoginFramework.LoadData("Firstname"));
             var lastName = Driver.Instance.FindElement(By.CssSelector("#last_name"));
-            lastName.SendKeys("Bz");
+            lastName.SendKeys(LoginFramework.LoadData("Lastname"));
             var Phone = Driver.Instance.FindElement(By.CssSelector("#customer_phone"));
-            Phone.SendKeys("6047040000");
+            Phone.SendKeys(LoginFramework.LoadData("Phone"));
             var Address = Driver.Instance.FindElement(By.CssSelector("#address_street"));
-            Address.SendKeys("Fullerton Ave");
+            Address.SendKeys(LoginFramework.LoadData("Address"));
             Driver.Wait(4, By.XPath("//*[@id='printable']/div/div/div/div/section/div[1]/div[1]/div/div[2]/div[1]"));
         }
 

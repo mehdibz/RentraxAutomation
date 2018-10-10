@@ -15,8 +15,11 @@ namespace Tests
         [TestMethod]
         public void User_Can_Login()
         {
-            LoginFramework.GoTo("https://dev.rentrax.io");
-            LoginFramework.LoginAs("root@localhost.com").WithPassword("root").Login();
+            var url = LoginFramework.LoadData("url");
+            var user = LoginFramework.LoadData("username");
+            var password = LoginFramework.LoadData("password");
+            LoginFramework.GoTo(url);
+            LoginFramework.LoginAs(user).WithPassword(password).Login();
             Assert.IsTrue(DashboardFramework.IsAt,"Failed to login.");
         }
 
