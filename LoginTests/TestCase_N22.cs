@@ -21,14 +21,10 @@ namespace Tests
             OrderFramework.NewOrder();
             OrderFramework.RentType();
             OrderFramework.Customer_Info();
-            OrderFramework.I_want_To_Rent();
-            OrderFramework.MultiRenter();
+            OrderFramework.MultiRenter_SingleProduct();
             OrderFramework.Renter_Attributes();
             OrderFramework.Renter_Attributes2();
-            OrderFramework.Check_Availability();
             OrderFramework.Rental_Period();
-            OrderFramework.Borrow_Items();
-            OrderFramework.Would_Like_To_Purchase();
             OrderFramework.TermAndCondition();
             OrderFramework.SignTerm();
             OrderFramework.TermAndCondition2();
@@ -40,7 +36,7 @@ namespace Tests
         [TestCleanup]
         public void CleanUp()
         {
-           Driver.Close();
+         //  Driver.Close();
         }
     }
 }

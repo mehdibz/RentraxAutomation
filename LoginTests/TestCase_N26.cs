@@ -5,7 +5,7 @@ using RentraxAutomation;
 namespace Tests
 {
     [TestClass]
-    public class TestCase_N21
+    public class TestCase_N26
     {
         [TestInitialize]
         public void Init()
@@ -21,21 +21,18 @@ namespace Tests
             OrderFramework.NewOrder();
             OrderFramework.RentType();
             OrderFramework.Customer_Info();
-            OrderFramework.SingleRenter_SingleProduct();
-            OrderFramework.Renter_Attributes();
+            OrderFramework.SingleRenter_MultiProduct();
             OrderFramework.Rental_Period();
-            OrderFramework.Borrow_Items();
-            OrderFramework.Would_Like_To_Purchase();
             OrderFramework.TermAndCondition();
             OrderFramework.SignTerm();
             OrderFramework.Credit_Card_Info();
-            Assert.IsTrue(OrderFramework.Pay());
+            //Assert.IsTrue(OrderFramework.Pay());
         }
 
         [TestCleanup]
         public void CleanUp()
         {
-           Driver.Close();
+           //Driver.Close();
         }
     }
 }

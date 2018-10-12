@@ -62,6 +62,10 @@
     <Compile Include="TestCase_N23.cs" />
     <Compile Include="TestCase_N24.cs" />
     <Compile Include="TestCase_N25.cs" />
+    <Compile Include="TestCase_N27.cs" />
+    <Compile Include="TestCase_N28.cs" />
+    <Compile Include="TestCase_N29.cs" />
+    <Compile Include="TestCase_N26.cs" />
     <Compile Include="TestCase_N22.cs" />
     <Compile Include="TestCase_N_all.cs" />
     <Compile Include="TestCase_N21.cs" />
