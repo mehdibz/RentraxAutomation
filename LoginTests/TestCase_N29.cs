@@ -22,8 +22,6 @@ namespace Tests
             OrderFramework.RentType();
             OrderFramework.Customer_Info();
             OrderFramework.SingleRenter_MultiProduct();
-            OrderFramework.Renter_Attributes();
-            OrderFramework.Renter_Attributes2();
             OrderFramework.Rental_Period();
             OrderFramework.Borrow_Items();
             OrderFramework.Would_Like_To_Purchase();

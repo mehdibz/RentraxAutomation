@@ -25,7 +25,8 @@ namespace RentraxAutomation
 
         public static void MultiRenter_MultiProduct()
         {
-            
+            SingleRenter_MultiProduct();
+
             var AddRenter = Driver.Instance.FindElement(By.XPath("//*[@id='Renter_04']/button"));
             AddRenter.Click();
 
@@ -269,13 +270,11 @@ namespace RentraxAutomation
             Driver.Wait(2, By.XPath("//*[@id='renter_section_id_1']/div/div[2]/div[3]/button[2]"));
             var selectCategory2 = Driver.Instance.FindElement(By.XPath("//*[@id='renter_section_id_1']/div/div[2]/div[3]/button[2]"));
             selectCategory2.Click();
-            var selectItem2 = Driver.Instance.FindElement(By.XPath("//html/body/div[3]/div[2]/div/div[2]/div/div/div/div/section/div[3]/div[1]/div[2]/div/div[2]/div[2]/div/div[1]/div[2]/select"));
+            var selectItem2 = Driver.Instance.FindElement(By.XPath("//*[@id='renter_section_id_1']/div/div[2]/div[2]/div/div[1]/div[2]/select"));
                                                                     
             selectItem2.Click();
-            var selectItem2Value = Driver.Instance.FindElement(By.XPath("//html/body/div[3]/div[2]/div/div[2]/div/div/div/div/section/div[3]/div[1]/div[2]/div/div[2]/div[2]/div/div[1]/div[2]/select/option[2]"));
-                                                                         
-            selectItemValue.Click();
-            
+            var selectItem2Value = Driver.Instance.FindElement(By.XPath("//*[@id='renter_section_id_1']/div/div[2]/div[2]/div/div[1]/div[2]/select/option[2]"));
+            selectItem2Value.Click();
         }
 
         public static void Rental_Period()
