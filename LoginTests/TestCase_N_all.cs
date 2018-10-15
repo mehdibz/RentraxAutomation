@@ -22,7 +22,7 @@ namespace Tests
             OrderFramework.RentType();
             OrderFramework.Customer_Info();
             OrderFramework.SingleRenter_SingleProduct();
-            OrderFramework.Renter_Attributes();
+            OrderFramework.First_Renter_Attributes_1();
             OrderFramework.Check_Availability();
             OrderFramework.Rental_Period();
             OrderFramework.Borrow_Items();

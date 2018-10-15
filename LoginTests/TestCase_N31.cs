@@ -21,12 +21,13 @@ namespace Tests
             OrderFramework.NewOrder();
             OrderFramework.RentType();
             OrderFramework.Customer_Info();
-            OrderFramework.SingleRenter_MultiProduct();
+            OrderFramework.MultiRenter_MultiProduct();
             OrderFramework.Rental_Period();
-            OrderFramework.Borrow_Items();
             OrderFramework.Would_Like_To_Purchase();
             OrderFramework.TermAndCondition();
             OrderFramework.SignTerm();
+            OrderFramework.TermAndCondition2();
+            OrderFramework.SignTerm2();
             OrderFramework.Credit_Card_Info();
             Assert.IsTrue(OrderFramework.Pay());
         }

@@ -25,14 +25,16 @@ namespace Tests
             OrderFramework.Rental_Period();
             OrderFramework.TermAndCondition();
             OrderFramework.SignTerm();
+            OrderFramework.TermAndCondition2();
+            OrderFramework.SignTerm2();
             OrderFramework.Credit_Card_Info();
-            //Assert.IsTrue(OrderFramework.Pay());
+            Assert.IsTrue(OrderFramework.Pay());
         }
 
         [TestCleanup]
         public void CleanUp()
         {
-           //Driver.Close();
+           Driver.Close();
         }
     }
 }
