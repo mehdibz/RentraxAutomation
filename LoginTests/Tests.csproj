@@ -85,6 +85,14 @@
     <Compile Include="TestCase_N54.cs" />
     <Compile Include="TestCase_N55.cs" />
     <Compile Include="TestCase_N56.cs" />
+    <Compile Include="TestCase_N58.cs" />
+    <Compile Include="TestCase_N59.cs" />
+    <Compile Include="TestCase_N60.cs" />
+    <Compile Include="TestCase_N62.cs" />
+    <Compile Include="TestCase_N63.cs" />
+    <Compile Include="TestCase_N64.cs" />
+    <Compile Include="TestCase_N65.cs" />
+    <Compile Include="TestCase_N61.cs" />
     <Compile Include="TestCase_N57.cs" />
     <Compile Include="TestCase_N53.cs" />
     <Compile Include="TestCase_N49.cs" />

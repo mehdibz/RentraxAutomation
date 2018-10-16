@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Console = System.Diagnostics.Debug;
+using static RentraxAutomation.CookiesManager;
 
 namespace RentraxAutomation
 {
@@ -17,7 +18,10 @@ namespace RentraxAutomation
             {
                 var Span_tag = Driver.Instance.FindElement(By.CssSelector("#printable > div.tiles.margin-bototm-30.padding-left-tiles > p:nth-child(1) > span"));
                 if (Span_tag.Text == "OPERATIONS")
-                    return true;    
+                {
+                    return true;
+                }
+                        
                 return false;
             }
         }

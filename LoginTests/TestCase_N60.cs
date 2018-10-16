@@ -5,7 +5,7 @@ using RentraxAutomation;
 namespace Tests
 {
     [TestClass]
-    public class TestCase_N50
+    public class TestCase_N60
     {
         [TestInitialize]
         public void Init()
@@ -21,9 +21,9 @@ namespace Tests
             OrderFramework.NewOrder();
             OrderFramework.RentType("Now");
             OrderFramework.Customer_Info();
-            OrderFramework.SingleRenter_SingleProduct();
-            OrderFramework.First_Renter_Attributes_1();
+            OrderFramework.SingleRenter_MultiProduct();
             OrderFramework.Rental_Period();
+            OrderFramework.Borrow_Items();
             OrderFramework.TermAndCondition();
             OrderFramework.SignTerm();
             OrderFramework.Credit_Card_Info();

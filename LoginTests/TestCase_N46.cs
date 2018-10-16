@@ -19,7 +19,7 @@ namespace Tests
             login.User_Can_Login();
             OrderFramework.GoToRent();
             OrderFramework.NewOrder();
-            OrderFramework.RentType();
+            OrderFramework.RentType("Now");
             OrderFramework.Customer_Info();
             OrderFramework.MultiRenter_SingleProduct();
             OrderFramework.Rental_Period();

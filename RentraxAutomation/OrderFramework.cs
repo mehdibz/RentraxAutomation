@@ -325,12 +325,23 @@ namespace RentraxAutomation
             SpecificDuration.Click();
         }
 
-        public static void RentType()
+        public static void RentType(String rType)
         {
-            //click on Rent_Now
-            Driver.Wait(5, By.XPath("//*[@id='printable']/div/div/div/div/section/div[1]/div[1]/div/div[2]/div[1]"));
-            var newOrder = Driver.Instance.FindElement(By.XPath("//*[@id='printable']/div/div/div/div/section/div[1]/div[1]/div/div[2]/div[1]"));
-            newOrder.Click();
+            if (rType == "Now")
+            {
+                //click on Rent_Now
+                Driver.Wait(5, By.XPath("//*[@id='printable']/div/div/div/div/section/div[1]/div[1]/div/div[2]/div[1]"));
+                var newOrder = Driver.Instance.FindElement(By.XPath("//*[@id='printable']/div/div/div/div/section/div[1]/div[1]/div/div[2]/div[1]"));
+                newOrder.Click();
+            }
+            else  // rType == "Later"
+            {
+                //click on Reserve for Later
+                Driver.Wait(5, By.XPath("//*[@id='printable']/div/div/div/div/section/div[1]/div[1]/div/div[2]/div[1]"));
+                var newOrder = Driver.Instance.FindElement(By.XPath("//*[@id='printable']/div/div/div/div/section/div[1]/div[1]/div/div[2]/div[1]"));
+                newOrder.Click();
+            }
+            
         }
 
         public static void Credit_Card_Info()

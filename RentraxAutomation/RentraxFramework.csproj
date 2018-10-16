@@ -61,6 +61,7 @@
     <Compile Include="DashboardFramework.cs" />
     <Compile Include="Driver.cs" />
     <Compile Include="Features.cs" />
+    <Compile Include="CookiesManager.cs" />
     <Compile Include="LoginFramework.cs" />
     <Compile Include="OrderFramework.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
