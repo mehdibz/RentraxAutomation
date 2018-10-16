@@ -91,6 +91,10 @@
     <Compile Include="TestCase_N62.cs" />
     <Compile Include="TestCase_N63.cs" />
     <Compile Include="TestCase_N64.cs" />
+    <Compile Include="TestCase_N66.cs" />
+    <Compile Include="TestCase_N67.cs" />
+    <Compile Include="TestCase_N68.cs" />
+    <Compile Include="TestCase_N69.cs" />
     <Compile Include="TestCase_N65.cs" />
     <Compile Include="TestCase_N61.cs" />
     <Compile Include="TestCase_N57.cs" />
