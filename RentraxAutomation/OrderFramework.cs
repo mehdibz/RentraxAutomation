@@ -328,7 +328,7 @@ namespace RentraxAutomation
         public static void RentType()
         {
             //click on Rent_Now
-            Driver.Wait(4, By.XPath("//*[@id='printable']/div/div/div/div/section/div[1]/div[1]/div/div[2]/div[1]"));
+            Driver.Wait(5, By.XPath("//*[@id='printable']/div/div/div/div/section/div[1]/div[1]/div/div[2]/div[1]"));
             var newOrder = Driver.Instance.FindElement(By.XPath("//*[@id='printable']/div/div/div/div/section/div[1]/div[1]/div/div[2]/div[1]"));
             newOrder.Click();
         }
@@ -356,10 +356,20 @@ namespace RentraxAutomation
         {
             Thread.Sleep(1000);
             var pay = Driver.Instance.FindElement(By.XPath("//*[@id='printable']/div/div/div/div/section/div[9]/input"));
-            Thread.Sleep(2000);
+            Thread.Sleep(3000);
             pay.Click();
             Driver.Wait(6, By.XPath("//*[@id='printable']/div/div/div/div[2]/div/div/a[2]/small"));
             return DashboardFramework.Check(By.XPath("//*[@id='printable']/div/div/div/div[2]/div/div/a[2]/small"), "DELIVERED ORDERS");  
+        }
+
+        public static bool Validate()
+        {
+            Thread.Sleep(1000);
+            var Validate = Driver.Instance.FindElement(By.XPath("//*[@id='Renter_12']"));
+            Thread.Sleep(3000);
+            Validate.Click();
+            Driver.Wait(6, By.XPath("//*[@id='printable']/div/div/div/div[2]/div/div/a[2]/small"));
+            return DashboardFramework.Check(By.XPath("//*[@id='printable']/div/div/div/div[2]/div/div/a[2]/small"), "DELIVERED ORDERS");
         }
 
         public static void SkipPaymentAndSubmit()
