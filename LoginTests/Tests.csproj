@@ -112,6 +112,10 @@
     <Compile Include="TestCase_N0154.cs" />
     <Compile Include="TestCase_N0155.cs" />
     <Compile Include="TestCase_N0156.cs" />
+    <Compile Include="TestCase_N0158.cs" />
+    <Compile Include="TestCase_N0159.cs" />
+    <Compile Include="TestCase_N0160.cs" />
+    <Compile Include="TestCase_N0161.cs" />
     <Compile Include="TestCase_N0157.cs" />
     <Compile Include="TestCase_N0153.cs" />
     <Compile Include="TestCase_N0149.cs" />
